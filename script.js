@@ -1,18 +1,18 @@
-function firstWord(s) {
+function firstWord(str) {
   // your code here
-	 let start = 0;
-    while (start < str.length && str[start] === ' ') {
-        start++;
+	// Trim leading and trailing whitespace
+    str = str.trim();
+
+    // Find the index of the first space
+    let indexOfSpace = str.indexOf(' ');
+
+    // If no space found, return the entire trimmed string
+    if (indexOfSpace === -1) {
+        return str;
     }
-    
-    // Find the end of the first word
-    let end = start;
-    while (end < str.length && str[end] !== ' ') {
-        end++;
-    }
-    
-    // Extract the first word
-    return str.substring(start, end);
+
+    // Otherwise, return the substring up to the first space
+    return str.slice(0, indexOfSpace);
 	
 }
 
